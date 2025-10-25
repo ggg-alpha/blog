@@ -3,4 +3,4 @@
 - 日付: 2025-10-23
 - 説明: 初回のパッチノートサンプルファイルです。
 
-PoccooooooooUnkoo
+PoccoooooUnkooo
