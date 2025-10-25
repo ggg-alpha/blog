@@ -1,0 +1,54 @@
+<nav class="site-header">
+    <div class="header-container">
+        <!-- サイトタイトル（クリックでトップへ） -->
+        <h1 class="site-title">
+            <a href="{{ "/" | relative_url }}">
+                {{ site.title }}
+            </a>
+        </h1>
+
+        <!-- グローバルナビゲーション -->
+        <ul class="site-nav">
+            {% for item in site.data.navigation %}
+            <li class="nav-item{% if page.url == item.url %} is-active{% endif %}">
+                <a href="{{ item.url | relative_url }}">
+                    {{ item.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .site-header {
+        background: #fff;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    .header-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .site-nav {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .nav-item a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .nav-item.is-active a {
+        border-bottom: 2px solid #3498db;
+    }
+</style>

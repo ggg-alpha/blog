@@ -1,0 +1,39 @@
+name: Discord Notification
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/patchnotes/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+          
+      - name: Install Dependencies
+        run: bun install
+        
+      - name: Run Notification Script
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: bun run ararm.ts
+
+# ///使用方法
+
+# GitHubリポジトリの Settings → Secrets で DISCORD_WEBHOOK_URL を設定
+# 上記のファイルをリポジトリに追加
+# docs/patchnotes フォルダに Markdown ファイルをプッシュすると自動的に Discord に通知されます
+# このスクリプトは以下の機能を提供します：
+
+# mainブランチへのプッシュを監視
+# docs/patchnotesフォルダ内の.mdファイルの変更を検出
+# 変更されたパッチノートをDiscord Webhookで送信
+# ///

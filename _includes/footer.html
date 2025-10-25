@@ -1,0 +1,45 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- フッターメニュー（必要に応じて） -->
+        <ul class="footer-nav">
+            <li><a href="{{ "/privacy/" | relative_url }}">プライバシーポリシー</a></li>
+            <li><a href="{{ "/terms/" | relative_url }}">利用規約</a></li>
+        </ul>
+
+        <!-- コピーライト -->
+        <p class="copyright">
+            &copy; {{ site.time | date: "%Y" }} {{ site.title }}.
+            All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        background: #f8f8f8;
+        border-top: 1px solid #eaeaea;
+        padding: 1.5rem 0;
+        margin-top: 3rem;
+    }
+
+    .footer-nav {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        margin: 0 0 0.5rem;
+    }
+
+    .footer-nav a {
+        text-decoration: none;
+        color: #555;
+        font-size: 0.9rem;
+    }
+
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+</style>
