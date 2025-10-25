@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const PATCHNOTES_DIR = 'docs/patchnotes';
+const PATCHNOTES_DIR = 'posts/';
 const WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 function looksLikeDiscordWebhook(url?: string): boolean {
